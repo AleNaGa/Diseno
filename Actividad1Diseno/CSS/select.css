@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh; 
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+.mujer{
+    text-decoration: none;
+    color: inherit;
+    flex:1;
+    background-image: url("img/mujer1.png");
+    height: 100vh;
+    width: 100vh;
+    background-position: top left;
+}
+h1{
+    font-size: 60px;
+    text-align: center;
+    line-height: 100vh;
+    text-orientation: upright;
+    transform: rotate(-90deg);
+    color: white;
+}
+.hombre{
+    text-decoration: none;
+    color: inherit;
+    flex:1;
+    background-image: url("img/hombre1.png");
+    height: 100vh;
+    width: 100vh;
+    background-position: top;
+}
