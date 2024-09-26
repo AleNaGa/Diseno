@@ -1,0 +1,123 @@
+EJERCICIO DISEÑO 1
+	-Crear estructura de carpetas
+		-Index
+		-Carpetas para cada vista
+			-HTML y CSS
+		-Corregir Nombres IMGs
+	-Abrir en pestañas
+		-CSS
+		-HTML	
+		-Modelo Imagem
+	-Dibujar contenedores
+		-Poner contenedores con colores distintos para posicionarlos facilmente
+			-type="text/css"
+		-Etiquetas
+			body: margin 0 paddin 0 (Para quitar el margin y paddin de los buscadores)
+			
+			-Div general: .contenedor 
+					-display: grid;
+					-grit-templaye-columns: 1fr 2fr;
+					-height: 100vh;
+				-section class login
+					-.login fondo de color
+				-img imagen
+					- .imagen fondo de color
+					-(para que no haya scroll por la imahgen) height: 100vh
+					-Para ajustarlo al vertical: object fit: cover y width: 100%
+					-background position: top left centre o la posicion que quieras
+				(-Si es un div:)
+					-background imagen
+					-background size: cover
+					-background repeat no repeat
+					
+			-En la sección Login: 
+				-Dibujo
+				-Un div por cada agrupación de elementos que consideremos
+				-display: flex column
+					-div 1 logos
+					-div 2 input
+					-div 3 button
+		-PONER FONDOS DE COLOR CUANDO CREEMOS LOS DIVS PARA ORGANIZAR MEJOR
+					-ponerle tamaño para organizar
+				-justify content: center
+				-align items center
+				-gap (PARA SEPARAR) pixeles
+					-div logos: gap display flex column align content centre 
+						-img
+						-p titulo
+					-div inputs: gap display flex column 
+						-input1
+						-input2
+					-div buttons: gap display flex column 
+						-button login 
+						-button display flex row
+							-img
+							texto
+							
+					A los divs ponerle que se estiren lo maximo que puedan y al padre un padding para mantener el tamaño flexible
+						-width: 100%
+						-padding 20px;
+					SE PUEDE poner otra etiqueta poniendo un espacio
+					Sirve para cuando se repiten valores en los contenedores
+						logos secc
+						inputs secc
+						button secc
+						-Secc: 
+							Gap 10px
+							display flex column 
+					Padding truco:  
+						p: arriba derehca abajo izquierda
+						p: arribaAbajo DerechaIzquierda
+						
+					DEFINIR BOTONES:
+						-BorderRadus, border(color), background color, font weight, ...
+					
+					
+					
+					METER EN a LOS BOTONES
+						width 100%
+						
+		SELECCION
+			Body a 0 margin y padding font family
+		DIV contenedor
+				display grid templaye columns 1fr 1fr
+			SECCION mujer
+				Colores medida y posicion
+				cambiar color x imagen 
+				background no repeat
+				background size cover //RESPONSIVO
+			SECCION hombre
+				colores medida y posicion
+				cambiar color x imagen
+				background no repeat //RESPONSIVO
+				
+			Dentro de cada uno: 
+				P hombre / mujer
+			
+				Para el texto: 
+					display flex
+					justify centre
+					aling center
+					tranfsform: rotate(-90deg)
+					font size 
+					color
+					
+			Transformar los DIV mujer y hombre en a
+				Quitar los estilos: 
+					Text decoration none
+	
+		MUJER
+			seccion con imagen de background 
+			JUSTIFY space between 
+			MENU nav
+				A home
+				A Shop
+				p usuario
+				div logoUsuario
+			texto
+				*
+				
+				
+				
+				
+					
