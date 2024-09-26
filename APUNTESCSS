@@ -73,7 +73,51 @@ EJERCICIO DISEÑO 1
 						-BorderRadus, border(color), background color, font weight, ...
 					
 					
-						
 					
+					METER EN a LOS BOTONES
+						width 100%
 						
-						
+		SELECCION
+			Body a 0 margin y padding font family
+		DIV contenedor
+				display grid templaye columns 1fr 1fr
+			SECCION mujer
+				Colores medida y posicion
+				cambiar color x imagen 
+				background no repeat
+				background size cover //RESPONSIVO
+			SECCION hombre
+				colores medida y posicion
+				cambiar color x imagen
+				background no repeat //RESPONSIVO
+				
+			Dentro de cada uno: 
+				P hombre / mujer
+			
+				Para el texto: 
+					display flex
+					justify centre
+					aling center
+					tranfsform: rotate(-90deg)
+					font size 
+					color
+					
+			Transformar los DIV mujer y hombre en a
+				Quitar los estilos: 
+					Text decoration none
+	
+		MUJER
+			seccion con imagen de background 
+			JUSTIFY space between 
+			MENU nav
+				A home
+				A Shop
+				p usuario
+				div logoUsuario
+			texto
+				*
+				
+				
+				
+				
+					
