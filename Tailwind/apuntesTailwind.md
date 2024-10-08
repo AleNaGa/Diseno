@@ -250,8 +250,131 @@ Se puede utilizar width para controlar el ancho, hight para controlar el tamaño
 <div class="w-10 h-5"></div>
 <div class="size-16"></div>
 <div class="size-full">Cubre su contenedor padre(como poner 100%)</div>
-<div class="size-full md:size-auto"> quita 
-
-
-
-
+<div class="size-full md:size-auto"> quita el width y height asociado bajo una condición concreta</div>
+```
+### TIPOGRAFÍA
+```CSS
+font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+```
+Font family se utiliza para elegir una tipografía concreta. A continuación veremos cómo usar Font Family en Tailwind así como todas las especificidades que le podemos atribuir a la tipografía.
+```HTML
+<div class="font-serif">fuente con serif</div>
+<div class="font-sans">fuente sin serif</div>ç
+<div class="font-mono">fuente monospace</div>
+```
+Para darle un tamaño tenemos que utilizar los tamaños predeterminados (o crear los propios en Config.):
+```HTML
+<div class="text-xs"> texto en 12px con altura 16px</div>
+<div class="text-sm">texto en 14px con altura 20px</div>
+<div class="text-base">texto en 16px con altura 24</div>
+<div class="text-lg">texto en 18px con altura 28px</div>
+```
+Como podemos comprobar sigue una prograsión de 1:2 1:4 con respecto al tamaño, lo que además obliga a estandarizar el texto en tamaños predeterminados y proporcionales.  
+Se cumple una situación parecida con respecto al peso de la tipografía:
+```HTML
+<div class="font-thin"> equivalente al font-weight 100</div>
+<div class="font-extralight"> equivalente al font-weight 200</div>
+<div class="font-light"> equivalente al font-weight 300</div>
+<div class="font-normal"> equivalente al font-weight 400</div>
+```
+Y así sucesivamente.  
+Con respecto al espacio entre las letras también existe una propiedad que utiliza palabras concretas para definir tamaños proporcionados:
+```HTML
+<div class="traking-tighter"> Letra con espaciado -0.05em</div>
+<div class="traking-tight"> Letra con espaciado -0.025em</div>
+<div class="traking-normal"> Letra con espaciado 0em</div>
+<div class="traking-wide"> Letra con espaciado 0.025em</div>
+<div class="traking-wider"> Letra con espaciado 0.05em</div>
+```
+Seguidamente veremos ejemplos del TEXT ALIGN, que en CSS se escribe: 
+```CSS
+text-align:left;
+text-align:justify;
+```
+```HTML
+<div class="text-left"/>
+<div class="text-justify"/>
+```
+### COLOR
+Para atribuir un color Tailwind tiene una propia biblioteca de nombres para colores estándares. A continuación se pondrá la sintaxis para usarlo pero para buscar un color concreto ir a la siguiente dirección:   
+[Colors](https://tailwindcss.com/docs/text-color)
+```HTML
+<p class="text-sky-400">Texto Azul</p>
+<p class="text-sky-400/75">Texto Azul con opacidad del 75%</p>
+<p class="text-fuchsia-950">Texto Rosa oscuro</p>
+<p class="text-inherit">Color heredado</p>
+<p class="text-slate-100">Texto Blanco</p>
+```
+### TEXT DECORATION
+Principalmente usado para quitar el subrayado de los enlaces
+```CSS
+text-decoration-line:underline;
+text-decoration: none;
+text-decoration-line: line-through;
+```
+Y en Tailwind se utilizaría de la siguiente forma. 
+```HTML
+<p class="underline ..."></p>
+<p class="overline ..."></p>
+<p class="line-through ..."></p>
+<p class="no-underline ..."></p>
+```
+### BACKGROUND
+Para el Background Color, al igual que todos los colores, utiliza su propia nomenclatura.
+```HTML
+<button class="bg-indigo-500"/>
+<button class="bg-white/75"/>
+<button class="bg-transparent"/>
+```
+Para el Background Repeat, principalmente usado en la adaptabilidad de la página a tamaños:
+```HTML
+<div class="bg-repeat"></div>
+<div class="bg-no-repeat"></div>
+<div class="bg-repeat-x"> solo horizontalmente</div>
+<div class="bg-repeat-y">solo verticalmente</div>
+```
+### BACKGROUND IMAGE
+En este caso si queremos poner una imagen propia recomiendan  meterla en la configuración como un estilo propio:
+```XML
+module.exports = {
+  theme: {
+    extend: {
+      backgroundImage: {
+        'hero-pattern': "url('/img/hero-pattern.svg')",
+        'footer-texture': "url('/img/footer-texture.png')",
+      }
+    }
+  }
+}
+```
+Y entonces se puede llamar desde el tipo BG
+```HTML
+<div class="bg-hero-pattern"/>
+<div class="bg-footer-texture"/>
+```
+También tiene Gradientes nativos como imagenes de fondo: 
+```HTML
+<div class="bg-gradient-to-l from-cyan-500 to-blue-500">de cyan a azul hacia la izquierda</div>
+```
+Si queremos usar una imagen en un caso concreto y determinado podemos llamarla desde la clase:
+```HTML
+<div class="bg-[url('/img/hero-pattern.svg')]"></div>
+```
+### BORDERS
+El ***Border Radius*** utiliza la misma forma que hemos visto en la tipografía. Una serie de tamaños preestablecidos que se invocan con palabras clave: 
+```CSS
+border-radius: 0px;
+border-radius: 0.1rem;
+```
+```HTML
+<div class="rounded"> 0.25rem;</div>
+<div class="rounded-md">0.375rem;</div>
+<div class="rounded-lg">0.5rem;</div>
+<div class="rounded-full">9999px</div>
+<div class="rounded-xl">0.75rem</div>
+<div class="rounded-t-lg">border-top-left-radius:0.5rem, border-top-right-radius:0.5rem;</div>
+```
+Consultar este enlace para ver todas las opciones: 
+[Border-radius](https://tailwindcss.com/docs/border-radius)
