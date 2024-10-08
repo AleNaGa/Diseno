@@ -75,6 +75,28 @@ En Tailwind la característica Display no hace falta especificar la etiqueta **D
 <div class="inline"> contenido en linea </div>
 <div class="grid"> contenido en grid </div>
 ```
+### OBJECT FIT
+```CSS
+object-fit: contain;
+object-fit: fill;
+object-fit: none;
+```
+Object-cover se utiliza para que un elemento cubra, esté contenido dentro, se estreche dentro de todo su contenedor o especifique un tamaño que queremos que tome si el contenedor se hace muy grance. Se puede establecer en Tailwind al lado de los tamaños que queramos como mínimos.
+
+```HTML
+<div>
+  <img class = "object-cover h48 w96">
+</div>
+<div>
+  <img class = "object contain h48 w-96">
+</div>
+<div>
+  <img class = "object-fill h48 w-96">
+</div>
+<div>
+  <img class = "object-scale-down h-48 w-96">
+</div>
+```` 
 ### FLEX
 ```CSS
 flex-direction: column;
@@ -134,6 +156,102 @@ Para el **gap** se establece primero la dirección y después el tamaño en pixe
 ```CSS
 justify-content: normal;
 justify-content: space-between;
+justify-content: flex-end;
 ``` 
-Para justificar el contenido hay que especificar primero el flex y después 
+Para justificar el contenido hay que especificar primero el flex (o el grid) y después se escribe el tipo de justify que queramos: 
+
+```HTML
+<div class = "flex justify-content:normal"></div>
+<div class = "flex justify-content:space-between"></div>
+<div class = "grid grid-flow-col justify-stretch"></div>
+<div class="grid justify-items-start"></div>
+<!-- Para controlar como se comporta individualmente un contenedor: -->
+<div class="grid justify-items-stretch ...">
+  <div class="justify-self-start">este tiene un justify diferente al resto</div>
+</div>
+```
+### LAYOUT TOP/RIGHT/BOTTOM/LEFT
+```css
+inset:0px;
+left:0px;
+bottom:0px;
+inset-inline-start: 0px;
+```
+Serie de utilidades para controlar el posicionamiento horizontal o vertical de los elementos dentro de un contenedor posicionado.
+```HTML
+<div class="relative h-32 w-32">
+  <div class = "absolute left-0 top-0 h-16 w-16">esquina izquierda arriba</div>
+</div>
+<div class="relative h-32 w-32">
+  <div class = "absolute inset-x-0 top-0">expandirse el borde superior</div>
+</div>
+<div class="relative h-32 w-32">
+  <div class = "absolute top-0 right-0 h-16 w-16">esquina derecha arriba</div>
+</div>
+<div class="relative h-32 w-32">
+  <div class = "absolute inset-y-0 left-0 h-16 w-16">expandirse el borde izquierdo</div>
+</div>
+<div class="relative h-32 w-32">
+  <div class = "absolute inset-0">cubrir el padre completo</div>
+</div>
+<div class="relative h-32 w-32">
+  <div class = "absolute bottom-0 right-0 h-16 w-16">Esquina izquierda abajo</div>
+</div>
+```
+### PADDING
+```CSS
+paddding: 0px;
+padding-left: 0px;
+padding-inline-start: 1px;
+padding-inline-end: 10px;
+```
+Se controla con `pt-*`, `pr-*`, `pb-*`, y `pl-*`, siendo respectivamente TOP RIGHT BOTTOM y LEFT. 
+Para los inline-start y inline-end se utiliza `ps-*`y `pe-*`.
+```HTML
+<div class="pt-6 ...">padding top 6(24 píxeles)</div>
+<div class="pr-4 ...">padding right</div>
+<div class="pb-8 ...">padding bottom</div>
+<div class="pl-2 ...">padding left</div>
+<div class="px-8 ...">padding horizontal</div>
+<div class="py-8 ...">padding vertical</div>
+<br/>
+<div dir="ltr">
+  <div class="ps-8 ...">hacia la derecha</div>
+  <div class="pe-8 ...">hacia la izquierda</div>
+<div>
+```
+### MARGIN
+```CSS
+margin: 0px;
+margin-left:1px;
+margin-right:10px;
+margin-inline-start:5px;
+```
+Se utiliza mt-*, mr-*, mb-*, y ml-*  para controlar los márgenes TOP RIGHT BOTTOM y LEFT. 
+Igual que el padding, utiliza mx-* para el eje horizontal y my-* para el eje vertical. 
+Además, se uriliza ms-* para inline-start y me-* para inline-end.
+```HTML
+<div class="mt-6 ...">margin top 24</div>
+<div class="mr-4 ...">margin right</div>
+<div class="mb-8 ...">margin bottom</div>
+<div class="ml-2 ...">margin left</div>
+<div dir="ltr">
+  <div class="ms-8 ...">inline-start</div>
+  <div class="me-8 ...">inline-end</div>
+<div>
+```
+### SIZING (Width y Height)
+```CSS
+width: 10px;
+hegith: 3px;
+```
+Se puede utilizar width para controlar el ancho, hight para controlar el tamaño vertical y size para controlar ambos.
+```HTML
+<div class="w-10 h-5"></div>
+<div class="size-16"></div>
+<div class="size-full">Cubre su contenedor padre(como poner 100%)</div>
+<div class="size-full md:size-auto"> quita 
+
+
+
 
